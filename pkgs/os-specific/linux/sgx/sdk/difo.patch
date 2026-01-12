@@ -6,7 +6,7 @@ index 5ad6efde..f9d27a3c 100644
  {	
  #else // Not C++, must define bool:
  
-+#ifdef __STDC_VERSION__ && __STDC_VERSION__ < 202311L
++#if defined(__STDC_VERSION__) && (__STDC_VERSION__ > 202311L)
  typedef unsigned int bool;
 +#endif
  
