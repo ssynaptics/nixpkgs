@@ -12,5 +12,4 @@ new file mode 100644
 ++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 +
 + # Add cmake directory to search for custom cmake functions.
-+ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmak
-\ No newline at end of file
++ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
