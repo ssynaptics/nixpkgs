@@ -62,6 +62,8 @@ stdenv.mkDerivation rec {
     ./cppmicroservices-no-mtime.patch
     ./difo.patch
     ./a.patch
+    ./g.patch
+    ./x.patch
   ];
 
   postPatch = ''
