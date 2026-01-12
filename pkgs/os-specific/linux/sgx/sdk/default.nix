@@ -38,6 +38,7 @@ stdenv.mkDerivation rec {
     hash = "sha256-1urEdfMKNUqqyJ3wQ10+tvtlRuAKELpaCWIOzjCbYKw=";
     fetchSubmodules = true;
   };
+  cmakeFlags = [ "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" ];
 
   postUnpack = ''
     # Make sure this is the right version of linux-sgx
