@@ -2,14 +2,13 @@ diff --git a/external/openmp/gr.patch b/external/openmp/gr.patch
 new file mode 100644
 --- /dev/null
 +++ b/external/openmp/gr.patch
-@@ -0,0 +1,10 @@
+@@ -0,0 +1,9 @@
 +diff --git a/final/CMakeLists.txt b/final/CMakeLists.txt
-+index 8d820a1..1240260 100644
++index 8d820a1..d0606fc 100644
 +--- a/final/CMakeLists.txt
 ++++ b/final/CMakeLists.txt
-+@@ -1,4 +1,4 @@
++@@ -1,4 +1,3 @@
 +-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
-++cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 +
 + # Add cmake directory to search for custom cmake functions.
 + set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
