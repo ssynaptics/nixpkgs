@@ -9,6 +9,6 @@ diff --git a/external/openmp/Makefile b/external/openmp/Makefile
 -	cd openmp_code && git apply ../0001-Enable-OpenMP-in-SGX.patch && cd ..
 +	cd openmp_code && git apply ../0001-Enable-OpenMP-in-SGX.patch && git apply ../gr.patch && cd ..
  endif
- 	$(MKDIR) openmp_code/final/build && cd openmp_code/final/build && cmake $(OMP_CONFIG) .. && $(MAKE)
+ 	$(MKDIR) openmp_code/final/build && cd openmp_code/final/build && cmake -DCMAKE_POLICY_VERSION_MINIMUM=3.5 $(OMP_CONFIG) .. && $(MAKE)
  
  
