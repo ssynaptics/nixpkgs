@@ -1,0 +1,14 @@
+diff --git a/sdk/protected_code_loader/crypto/pcl_crypto_internal.h b/sdk/protected_code_loader/crypto/pcl_crypto_internal.h
+index 5ad6efde..f9d27a3c 100644
+--- a/sdk/protected_code_loader/crypto/pcl_crypto_internal.h
++++ b/sdk/protected_code_loader/crypto/pcl_crypto_internal.h
+@@ -38,7 +38,9 @@ extern "C"
+ {	
+ #else // Not C++, must define bool:
+ 
++#ifdef __STDC_VERSION__ && __STDC_VERSION__ < 202311L
+ typedef unsigned int bool;
++#endif
+ 
+ #endif // #ifdef __cplusplus
+ 
