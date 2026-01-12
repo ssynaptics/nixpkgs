@@ -61,6 +61,7 @@ stdenv.mkDerivation rec {
     # build because the embedded zip file contents have different modified times.
     ./cppmicroservices-no-mtime.patch
     ./difo.patch
+    ./a.patch
   ];
 
   postPatch = ''
