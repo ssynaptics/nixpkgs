@@ -38,7 +38,6 @@ stdenv.mkDerivation rec {
     hash = "sha256-1urEdfMKNUqqyJ3wQ10+tvtlRuAKELpaCWIOzjCbYKw=";
     fetchSubmodules = true;
   };
-  cmakeFlags = [ "-DCMAKE_POLICY_VERSION_MINIMUM=3.5" ];
 
   postUnpack = ''
     # Make sure this is the right version of linux-sgx
@@ -61,7 +60,6 @@ stdenv.mkDerivation rec {
     # build because the embedded zip file contents have different modified times.
     ./cppmicroservices-no-mtime.patch
     ./difo.patch
-    ./a.patch
     ./g.patch
     ./x.patch
   ];
