@@ -1,6 +1,6 @@
 diff --git a/external/openmp/Makefile b/external/openmp/Makefile
---- external/openmp/Makefile
-+++ external/openmp/Makefile
+--- a/external/openmp/Makefile
++++ b/external/openmp/Makefile
 @@ -33,9 +33,9 @@
  
  OMP_DIR = openmp_code
