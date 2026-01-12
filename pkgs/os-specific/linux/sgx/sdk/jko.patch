@@ -1,0 +1,41 @@
+commit 6b4e1f3406dd1c5222f5cf9150aff0703f5f72a6
+Author: syn <mymail@mymail.com>
+Date:   Mon Jan 12 05:53:48 2026 +0300
+
+    j
+
+diff --git a/external/openmp/Makefile b/external/openmp/Makefile
+index 1c789daa..1dfe201b 100644
+--- a/external/openmp/Makefile
++++ b/external/openmp/Makefile
+@@ -69,7 +69,7 @@ $(LIBOMP): $(CHECK_SOURCE)
+ ifeq ("$(wildcard $(OMP_DIR)/final/runtime/src/sgx_stub.h)", "")
+ 	cd openmp_code && git apply ../0001-Enable-OpenMP-in-SGX.patch && cd ..
+ endif
+-	$(MKDIR) openmp_code/final/build && cd openmp_code/final/build && cmake $(OMP_CONFIG) .. && $(MAKE)
++	$(MKDIR) openmp_code/final/build && cd openmp_code && git apply ../fix.patch && cd .. && cd openmp_code/final/build && cmake $(OMP_CONFIG) .. && $(MAKE)
+ 
+ 
+ .PHONY: clean
+@@ -80,5 +80,3 @@ clean:
+ rebuild:
+ 	 $(MAKE) clean
+ 	 $(MAKE) all
+-
+-
+diff --git a/external/openmp/fix.patch b/external/openmp/fix.patch
+new file mode 100644
+index 00000000..51c6771a
+--- /dev/null
++++ b/external/openmp/fix.patch
+@@ -0,0 +1,10 @@
++diff --git a/final/CMakeLists.txt b/final/CMakeLists.txt
++index 8d820a1..c627f20 100644
++--- a/final/CMakeLists.txt
+++++ b/final/CMakeLists.txt
++@@ -1,4 +1,4 @@
++-cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+++cmake_minimum_required(VERSION 4.1)
++ 
++ # Add cmake directory to search for custom cmake functions.
++ set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
