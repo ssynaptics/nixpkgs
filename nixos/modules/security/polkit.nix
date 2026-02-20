@@ -107,7 +107,7 @@ in
       setuid = true;
       owner = "root";
       group = "root";
-      source = "${cfg.package.bin}/lib/polkit-agent-helper-1";
+      source = "${cfg.package}/lib/polkit-agent-helper-1";
     };
 
     systemd.tmpfiles.rules = [
