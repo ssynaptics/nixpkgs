@@ -103,6 +103,13 @@ in
       source = "${cfg.package.bin}/bin/pkexec";
     };
 
+    security.wrappers.polkit-agent-helper-1 = {
+      setuid = true;
+      owner = "root";
+      group = "root";
+      source = "${cfg.package.bin}/lib/polkit-agent-helper-1";
+    };
+
     systemd.tmpfiles.rules = [
       # Probably no more needed, clean up
       "R /var/lib/polkit-1"
